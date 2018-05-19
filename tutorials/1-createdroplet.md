@@ -13,6 +13,4 @@ These droplets are the Virtual Private Servers that are setup within minutes rea
     - Name your Server. It's best to do something like **HBF-SERVER.example.com** if you have a domain name that you are going to attach to this. If not then just name it how you like but add **-example.com** to the end of your name. This is for FQDN purposes. Also remeber you cannot have any spaces so use hyphens and underscores as needed. You can add tags for faster searching if you have more than 5 or 10 servers.
     - Click create. It will take around 30 seconds or so. Sometimes longer depending on the network.
 
-Go to install basic tools section next: ./2-basictools.md
-
-Test link ../README.md
+Go to install basic tools section next: [Basic Tools for Install](./2-basictools.md)
