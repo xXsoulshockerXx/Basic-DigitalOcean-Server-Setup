@@ -101,4 +101,4 @@ Use **sudo apache2ctl configtest** to check the syntax again and make sure every
 
 Use **sudo systemctl restart apache2** to restart apache2.
 
-Go to [Create Directories and Set Permissions Section](tutorials/4-dirpermsetup.md)
+Go to [Create Directories and Set Permissions Section](./4-dirpermsetup.md)
