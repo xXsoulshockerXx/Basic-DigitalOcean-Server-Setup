@@ -124,4 +124,4 @@ The default config file is still enabled. In order for this to properly work, we
 
 Now we need to use **sudo service apache2 reload** to activate the new configuration. Then use **sudo service apache2 restart*** to restart all apache2 services.
 
-Go to [PHP Section](tutorials/5-php.md)
+Go to [PHP Section](5-php.md)
