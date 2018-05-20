@@ -9,8 +9,8 @@ Use the following command to add our user account to that group. Remember to rep
 Now we need to create two folders. One is the **servername.yourdomain.com** and the other is **yourdomain.com**. Please replace accordingly.
 
 ```
-sudo mkdir -p /var/www/servername.yourdomain.com/public_html
-sudo mkdir -p /var/www/yourdomain.com/public_html
+sudo mkdir -p /var/www/servername.yourdomain.com/
+sudo mkdir -p /var/www/yourdomain.com/
 ```
 
 What we are doing is creating a server folder for our servername (which is a domain name) and an actual folder for our domain name.
@@ -18,11 +18,11 @@ What we are doing is creating a server folder for our servername (which is a dom
 ### Now to Add Permissions to Our Domain Folders
 
 ```
-sudo chown root:www-data -R /var/www/servername.yourdomain.com/public_html
-sudo chown root:www-data -R /var/www/yourdomain.com/public_html
+sudo chown root:www-data -R /var/www/servername.yourdomain.com/
+sudo chown root:www-data -R /var/www/yourdomain.com/
 
-sudo chmod -R 775 /var/www/servername.yourdomain.com/public_html
-sudo chmod -R 775 /var/www/yourdomain.com/public_html
+sudo chmod -R 775 /var/www/servername.yourdomain.com/
+sudo chmod -R 775 /var/www/yourdomain.com/
 
 sudo setfacl -d -R -m u:root:rwx,g:www-data:rwx,o::rwx /var/www/html
 sudo setfacl -d -R -m u:root:rwx,g:www-data:rw,o::r /var/www/html
@@ -33,22 +33,22 @@ sudo setfacl -d -R -m u:root:rwx,g:www-data:rw,o::r /var/www/html
 We need to create two files and save them in the proper directory. Remember that **Control+O** is to save and **Control+X** is to exit the text editor. Replace accordingly.
 
 ```
-sudo nano /var/www/servername.yourdomain.com/public_html/index.html
-sudo nano /var/www/yourdomain.com/public_html/index.html
+sudo nano /var/www/servername.yourdomain.com/index.html
+sudo nano /var/www/yourdomain.com/index.html
 ```
 
-Replace [domain name] with the proper address.
+Replace **[domain name]** with the proper address.
 
 Use this Index Template that I have created [Index Template](../templates/index_template.html)
 
-Create Virtual Hosts for Our Domains
+### Create Virtual Hosts for Our Domains
 
 Now to copy the default config file to a new config file for our domain setup. We will need to do this for every domain we set up with directories. Replace the names accordingly.
 
-NOTE: NEED TO MODIFY 000-DEFAULT.CONF because it will overwrite the config files we make.
-
-sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/[replace].conf
+```
+sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/[replace_with_domain].conf
 sudo nano /etc/apache2/sites-available/[domain].conf
+```
 
 Should look something like this:
 
@@ -61,9 +61,9 @@ Should look something like this:
 
 Make sure to replace the ServerAdmin with your real email address. Also replace DocumentRoot with the correct site directory.
 
-Add ServerName [domain name] below ServerAdmin. Also add ServerAlias www.[domain] under DocumentRoot so that the site is also browseable when someone types in www. in front of the domain.
+Add **ServerName [domain name]** below **ServerAdmin**. Also add **ServerAlias www.[domain]** under **DocumentRoot** so that the site is also browseable when someone types in www. in front of the domain.
 
-Scroll down, and just before </VirtualHost> add this:
+Scroll down, and just before **</VirtualHost>** add this:
 
 ```
 <Directory /var/www/html/[domain]/public_html>
@@ -123,3 +123,5 @@ The default config file is still enabled. In order for this to properly work, we
 ``` sudo a2dissite 000-deafult.conf ```
 
 Now we need to use **sudo service apache2 reload** to activate the new configuration. Then use **sudo service apache2 restart*** to restart all apache2 services.
+
+Go to [PHP Section](tutorials/5-php.md)
