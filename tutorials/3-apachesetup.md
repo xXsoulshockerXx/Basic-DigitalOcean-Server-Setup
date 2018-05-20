@@ -1,6 +1,25 @@
 ## Setup Apache2 for the Server
 After you login we need to setup the server up so it's browseable on the web.
 
+Launch Putty and type in the IP Address of the server and click connect.
+
+Login with the root account and use the provided password in your email. It will ask you to change the password, so remember it. If you get yourself locked out of the root account you can request a password reset through the dashboard.
+
+First we don't want to be using the ROOT account. So let's create our own.
+
+```sudo adduser [your new username]```
+
+It will ask you to insert password and confirm the new password. Go ahead and insert your name and such. Use the following commands to give us the permissions we need in order to continue.
+
+```
+sudo adduser [your username] sudo
+sudo adduser [your username] root
+```
+
+Exit putty and reconnect using your new account.
+
+### Now the fun begins
+
 We need to access the hosts files and setup somethings so the server doesn't go crazy because it can't see itself. It's weird, I know. However, tedious it might seem, it's beneficial in the long run.
 
 Use this command to access the hosts file:
