@@ -21,8 +21,22 @@ Once Apache2 has been configured, now we need to setup the server root directory
 
 Go to [Create Directories and Set Permissions Section](tutorials/4-dirpermsetup.md)
 
-### Index Files
-A generic index file template to test to see if the server is working.
+## Setup PHP and Make Sure It's Working
+Need to setup PHP for applications like WordPress and etc.
 
-### Script Files
-Scripts that are used in the tutorial videos. These are for logwatch, tripware, and more.
+Go to [PHP Section](tutorials/5-php.md)
+
+## MySQL Setup
+Now we need to setup our database system.
+
+Go to [MySQL Section](tutorials/6-mysql.md)
+
+## Install and Secure PHPmyAdmin
+This is a web based client that allows us to make modifications to the MySQL database easily.
+
+Go to [Install and Secure PHPmyAdmin Section](tutorials/7-pma.md)
+
+## Install and Setup a Mail Transfer Agent
+This will allow our server to send emails for various reasons. This is probably a must have for any server.
+
+Go to [Install and Setup a Mail Transfer Agent Section](tutorials/8-mta.md)
