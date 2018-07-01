@@ -14,3 +14,6 @@ You will need these applications to continue. Here are the names and links.
 3. NotePad++
     - This is an advanced notepad that can handle all types of code. A big improvement over the standard Windows Notepad.
     - https://notepad-plus-plus.org/download/v7.5.6.html
+
+## Tutorial Document
+Download this and use it to follow along with the YouTube Videos.
