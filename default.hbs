@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>{{meta_title}}</title>
+
+	<!-- Bootstrap 4 Styles-->
+    <link rel="stylesheet" type="text/css" href="{{asset "css/bs4/bootstrap.css"}}" />
+	<link rel="stylesheet" type="text/css" href="{{asset "css/bscompanion/bootstrap-companion.css"}}" />
+
+	<!-- Custom Styles -->
+	<link rel="stylesheet" type="text/css" href="{{asset "css/custom.css"}}" />
+	<link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" /> <!--load all font-awesome styles -->
+
+	<!-- https://prismjs.com okadia theme code style -->
+	<!-- https://ghost.org/tutorials/code-syntax-highlighting/ -->
+	<link rel="stylesheet" type="text/css" href="{{asset "css/prism.css"}}" />
+
+	<script>
+        var images = document.querySelectorAll('.kg-gallery-image img');
+        images.forEach(function (image) {
+            var container = image.closest('.kg-gallery-image');
+            var width = image.attributes.width.value;
+            var height = image.attributes.height.value;
+            var ratio = width / height;
+            container.style.flex = ratio + ' 1 0%';
+        })
+    </script>
+	<style>
+		pre[class*=language-] {
+			background: #111;
+		}
+	</style>
+
+	<!-- This tag outputs SEO meta+structured data and other important settings -->
+	{{ghost_head}}
+</head>
+<body id="main-body">
+	<!-- Header -->
+	{{> header}}
+
+	<!-- Body -->
+	{{{body}}}
+
+	<!-- Footer -->
+	{{> footer}}
+
+	<!-- JQUERY -->
+	<script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.js"></script>
+
+	<!-- Bootstrap 4 Javascript -->
+    <script type="text/javascript" src="{{asset "js/bs4/bootstrap.js"}}"></script>
+	
+	<!-- https://fslightbox.com lightbox plugin -->
+    <script type="text/javascript" src="{{asset "js/fslightbox/fslightbox.js"}}"></script>
+	<script>
+		$('.kg-gallery-image img ').each(function() {
+			$(this).wrap("<a data-no-swup data-fslightbox href='" + this.src + "'/>");
+		});
+		$('img.kg-image ').each(function() {
+			$(this).wrap("<a data-no-swup data-fslightbox href='" + this.src + "'/>");
+		});
+		$('.featured_image img ').each(function() {
+			$(this).wrap("<a data-no-swup data-fslightbox href='" + this.src + "'/>");
+		});
+	</script>
+
+	<!-- https://prismjs.com code block -->
+    <script type="text/javascript" src="{{asset "js/prism.js"}}"></script>
+	<script>
+		window.addEventListener('DOMContentLoaded', (event) => {      
+			document.querySelectorAll('pre[class*=language-]').forEach(function(node) {
+				node.classList.add('line-numbers');
+			});
+			Prism.highlightAll();
+		});
+	</script>
+
+
+	<!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag -->
+    {{ghost_foot}}
+</body>
+</html>

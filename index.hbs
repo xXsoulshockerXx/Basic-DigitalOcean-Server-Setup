@@ -1,0 +1,24 @@
+{{!< default}}
+
+<section class="site-header jumbotron bg-dark">
+	<div class="container text-center">
+		<h1>Posts</h1>
+		<p>Your Guide to Technology</p>
+	</div>
+</section>
+
+{{#if feature_image}}<section class="container"><div class="featured_image"><img class="img-fluid" src="{{feature_image}}" alt="{{title}}"></div></section>{{/if}}
+
+<section class="container">
+	<div class="row">
+		<!-- For each one of the posts, display the title -->
+		{{#foreach posts}}
+			{{> post_card}}
+		{{/foreach}}
+	</div>
+</section>
+
+<!-- Pagination block -->
+<div class="container">
+	{{pagination}}
+</div>

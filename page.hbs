@@ -1,0 +1,17 @@
+{{!< default}}
+
+{{#post}}
+<section class="site-header jumbotron bg-dark">
+	<div class="container text-center">
+		<h1>{{title}}</h1>
+		<p>{{excerpt}}</p>
+	</div>
+</section>
+
+{{#if feature_image}}<section class="container"><figure class="featured_image"><img class="img-fluid" src="{{feature_image}}" alt="{{title}}"></figure></section>{{/if}}
+
+<section class="container page-body">
+	<!-- page content -->
+	{{content}}
+</section>
+{{/post}}

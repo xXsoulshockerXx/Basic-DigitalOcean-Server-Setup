@@ -1,0 +1,61 @@
+{{!< default}}
+
+<!-- Posts Object -->
+{{#post}}
+
+<div class="site-header jumbotron bg-dark">
+	<div class="container">
+		<div class="post-title-content">
+			<h5 class="link-danger text-danger">{{tags}}</h5>
+			<h1>{{title}}</h1>
+			<p>{{excerpt}}</p>
+			<div class="profile-separation">
+			{{#foreach authors}}
+				<div class="card-profile">
+					<span class="card-profile-image">
+						{{#if profile_image}}
+							<a href="{{url}}"><img class="post-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" /></a>
+						{{else}}
+							<a href="{{url}}" class="static-avatar post-profile-image">{{> "icons/avatar"}}</a>
+						{{/if}}
+					</span>
+			
+					<span class="card-profile-text">
+						<div class="link-danger text-danger"><a href="{{url}}">{{name}}</a></div>
+			{{/foreach}}
+						<div><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> <span>&bull;</span> {{reading_time}}</div>
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{{#if feature_image}}<section class="container"><figure class="featured_image"><img class="img-fluid" src="{{feature_image}}" alt="{{title}}"></figure></section>{{/if}}
+
+<section class="container">
+	<div class="content post-body">
+		{{content}}
+		<div class="post-update">This post was last updated on <time datetime="{{date updated_at format='YYYY-MM-DD'}}">{{date updated_at format="MMMM DD, YYYY"}}</time>.</div>
+	</div>
+</section>
+
+{{#get "posts" include="tags,authors" limit="3" filter="id:-{{id}}+tag:{{primary_tag.slug}}" as |related|}}
+	{{#if related}}
+		<section class="container" id="related_posts">
+			<h3 class="text-center">Read Next</h3>
+
+			<div class="row">
+				{{#foreach posts}}
+					{{> post_card}}
+				{{/foreach}}
+			</div>
+		</section>
+	{{/if}}
+{{/get}}
+
+{{/post}}
+
+
+
+
