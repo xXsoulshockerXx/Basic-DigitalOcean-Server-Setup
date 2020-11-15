@@ -5,7 +5,17 @@ This is a theme for [Ghost CMS](https://ghost.org/). You can upload this directl
 
 This theme is currently being used on my portoflio [website](https://harleybfrank.com). You can view the theme in it's entirity there.
 
+Included in the theme:
+
+- [Font Awesome](https://fontawesome.com/)
+- [PrismJS Code Block Styling](https://prismjs.com/)
+- [FS LightBox Plugin](https://fslightbox.com/)
+- Custom Bootstrap 4 Styling. I am calling it BootstrapCompanion. More information to follow when completed.
+
 ### Changes
 
+- Initial Commit, no changes yet.
 
 ### To Do
+
+- Search Functionality
