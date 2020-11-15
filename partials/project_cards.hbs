@@ -1,0 +1,30 @@
+<div class="col-sm-4" id="posts">
+    {{#if feature_image}}
+        <div class="card-image">
+            <img src="{{feature_image}}" class="card-img-top" alt="{{title}}">
+        </div>
+        <div class="card-body">
+            <h4 class="card-title text-center">{{title}}</h4>
+            <p class="card-text text-muted">
+                {{#if meta_description}}
+                    {{meta_description words="40"}}...
+                {{else}}
+                    {{excerpt words="40"}}...
+                {{/if}}
+            </p>
+            <div class="project-btn"><a href="{{url}}" class="btn btn-danger btn-block text-white">View Project</a></div>
+        </div>
+    {{else}}
+        <div class="card-body">
+            <h4 class="card-title text-center">{{title}}</h4>
+            <p class="card-text text-muted">
+                {{#if meta_description}}
+                    {{meta_description words="40"}}...
+                {{else}}
+                    {{excerpt words="40"}}...
+                {{/if}}
+            </p>
+            <div class="project-btn"><a href="{{url}}" class="btn btn-danger btn-block text-white">View Project</a></div>
+        </div>
+    {{/if}}  
+</div>

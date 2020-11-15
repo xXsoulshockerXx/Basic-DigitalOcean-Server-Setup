@@ -1,0 +1,60 @@
+<div class="col-sm-4" id="posts">
+    {{#if feature_image}}
+        <div class="card-image">
+            <img src="{{feature_image}}" class="card-img-top" alt="{{title}}">
+        </div>
+        <div class="card-body">
+            <p class="link-danger text-danger">{{tags}}</p>
+            <h2 class="card-title"><a class="text-danger link-danger" href="{{url}}">{{title}}</a></h2>
+            <p class="card-text text-muted">
+                {{#if meta_description}}
+                    {{meta_description words="40"}}...
+                {{else}}
+                    {{excerpt words="40"}}...
+                {{/if}}
+            </p>
+        {{#foreach authors}}
+            <div class="card-profile">
+                <span class="card-profile-image">
+                    {{#if profile_image}}
+                        <a href="{{url}}"><img class="post-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" /></a>
+                    {{else}}
+                        <a href="{{url}}" class="static-avatar post-profile-image">{{> "icons/avatar"}}</a>
+                    {{/if}}
+                </span>
+                <span class="card-profile-text">
+                    <div class="link-danger text-danger"><a href="{{url}}">{{name}}</a></div>
+        {{/foreach}}
+                    <div><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> <span>&bull;</span> {{reading_time}}</div>
+                </span>
+            </div>
+        </div>
+    {{else}}
+        <div class="card-body">
+            <p class="link-danger text-danger">{{tags}}</p>
+            <h2 class="card-title"><a class="text-danger link-danger" href="{{url}}">{{title}}</a></h2>
+            <p class="card-text text-muted">
+                {{#if meta_description}}
+                    {{meta_description words="40"}}...
+                {{else}}
+                    {{excerpt words="40"}}...
+                {{/if}}
+            </p>
+        {{#foreach authors}}
+            <div class="card-profile">
+                <span class="card-profile-image">
+                    {{#if profile_image}}
+                        <a href="{{url}}"><img class="post-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" /></a>
+                    {{else}}
+                        <a href="{{url}}" class="static-avatar post-profile-image">{{> "icons/avatar"}}</a>
+                    {{/if}}
+                </span>
+                <span class="card-profile-text">
+                    <div class="link-danger text-danger"><a href="{{url}}">{{name}}</a></div>
+        {{/foreach}}
+                    <div><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> <span>&bull;</span> {{reading_time}}</div>
+                </span>
+            </div>
+        </div>
+    {{/if}}  
+</div>

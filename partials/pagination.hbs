@@ -1,0 +1,25 @@
+<div class="container page-num">
+    <nav class="pagination is-medium" role="navigation" aria-label="pagination"></nav>
+        <div class="row">
+            <div class="col text-left">
+                {{#if prev}}
+                    <a href="{{page_url prev}}" class="btn btn-danger paginatino-next">Newer Posts</a>
+                {{/if}}
+            </div>
+            <div class="col text-center">
+                <span class="pagination-link is-current">Page {{page}} of {{pages}}</span>
+            </div>
+            <div class="col text-right">
+                {{#if next}}
+                    <a href="{{page_url next}}" class="btn btn-danger pagination-previous">Older Posts</a>
+                {{/if}}
+            </div>
+        </div>
+    </nav>
+</div>
+
+    
+
+    
+
+    
